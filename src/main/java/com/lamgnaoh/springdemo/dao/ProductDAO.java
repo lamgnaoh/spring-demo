@@ -55,4 +55,25 @@ public class ProductDAO {
   }
 
 
+  public void add(Product product) {
+    products.add(product);
+  }
+
+  public void update(Product updatedProduct) {
+    Product existedProduct = products.get(updatedProduct.getId() - 1);
+    existedProduct.setTitle(updatedProduct.getTitle());
+    existedProduct.setDescription(updatedProduct.getDescription());
+    existedProduct.setPrice(updatedProduct.getPrice());
+    existedProduct.setDiscountPercentage(updatedProduct.getDiscountPercentage());
+    existedProduct.setRating(updatedProduct.getRating());
+    existedProduct.setStock(updatedProduct.getStock());
+    existedProduct.setBrand(updatedProduct.getBrand());
+    existedProduct.setCategory(updatedProduct.getCategory());
+    existedProduct.setThumbnail(updatedProduct.getThumbnail());
+    existedProduct.setImages(updatedProduct.getImages());
+  }
+
+  public void delete(Product deletedProduct) {
+    products.remove(deletedProduct);
+  }
 }
